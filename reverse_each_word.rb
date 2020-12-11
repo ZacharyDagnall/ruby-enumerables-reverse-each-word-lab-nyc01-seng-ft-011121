@@ -9,7 +9,7 @@ def reverse_each_word(str)
   reversestr = ""
   
   wordchars.each_with_index do |wordc, index|
-    for i in 0..wordc.length do
+    for i in 0...wordc.length do
       reversestr += wordc[wordc.length-i-1]
     end
     if index!=(wordchars.length-1)
