@@ -1,18 +1,22 @@
-require 'pry'
 
 def reverse_each_word(str)
   words = str.split(" ")
-  #binding.pry
-  wordchars = words.map {|word| word.chars}
-  #binding.pry
+  wordchars = words.collect {|word| word.chars}
+ 
+  reversedstr = ""
   
-  reversestr = ""
-  
-  wordchars.each do |wordc|
-    for i in 0..wordc.length do
-      reversestr += wordc[wordc.length-i-1]
+  wordchars.each_with_index do |wordc, index|
+    for i in 0...wordc.length do
+      reversedstr += wordc[wordc.length-i-1]
+    end
+    if index!=(wordchars.length-1)
+      reversedstr+=" "
     end
   end
   
-  reversestr
+  reversedstr
+  
+  
+  
+  
 end
