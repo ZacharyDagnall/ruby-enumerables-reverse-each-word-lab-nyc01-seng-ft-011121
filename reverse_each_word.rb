@@ -1,19 +1,22 @@
 
 def reverse_each_word(str)
   words = str.split(" ")
-  wordchars = words.map {|word| word.chars}
+  wordchars = words.collect {|word| word.chars}
  
-  
-  reversestr = ""
+  reversedstr = ""
   
   wordchars.each_with_index do |wordc, index|
     for i in 0...wordc.length do
-      reversestr += wordc[wordc.length-i-1]
+      reversedstr += wordc[wordc.length-i-1]
     end
     if index!=(wordchars.length-1)
-      reversestr+=" "
+      reversedstr+=" "
     end
   end
   
-  reversestr
+  reversedstr
+  
+  
+  
+  
 end
